@@ -1,0 +1,141 @@
+/* ===== Global Reset ===== */
+* {
+ box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ font-family: Arial, Helvetica, sans-serif;
+ background-color: #f5f7fa;
+ color: #333;
+}
+
+/* ===== Layout ===== */
+.container {
+ max-width: 900px;
+ margin: 40px auto;
+ padding: 24px;
+ background: #ffffff;
+ border-radius: 8px;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Headings ===== */
+h1,
+h2,
+h3 {
+ margin-top: 0;
+ margin-bottom: 16px;
+ color: #222;
+}
+
+/* ===== Cards (Tickets, Lists) ===== */
+.card {
+ padding: 14px 16px;
+ border: 1px solid #e0e0e0;
+ border-radius: 6px;
+ margin-bottom: 12px;
+ cursor: pointer;
+ background-color: #fafafa;
+ transition:
+  background-color 0.2s ease,
+  box-shadow 0.2s ease;
+}
+
+.card:hover {
+ background-color: #f0f4ff;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Forms ===== */
+input {
+ width: 100%;
+ padding: 10px;
+ margin-bottom: 14px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 14px;
+}
+
+input:focus {
+ outline: none;
+ border-color: #007bff;
+}
+
+/* ===== Buttons ===== */
+button {
+ padding: 10px 16px;
+ background-color: #007bff;
+ color: #ffffff;
+ border: none;
+ border-radius: 4px;
+ font-size: 14px;
+ cursor: pointer;
+}
+
+button:hover {
+ background-color: #0056b3;
+}
+
+/* ===== Text Helpers ===== */
+.empty-text {
+ color: #777;
+ font-style: italic;
+}
+
+/* ===== Ticket Details ===== */
+.ticket-description {
+ padding: 12px;
+ background-color: #f9f9f9;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ margin-bottom: 20px;
+}
+
+.section {
+ margin-top: 30px;
+}
+
+.loading-text {
+ text-align: center;
+ margin-top: 40px;
+ color: #666;
+}
+
+.error-text {
+ color: #d9534f;
+ margin-bottom: 10px;
+}
+
+/* ===== Connect Integrations ===== */
+.success-text {
+ color: #28a745;
+ margin-bottom: 16px;
+}
+
+.section h3 {
+ margin-bottom: 10px;
+}
+
+/* ===== Webhook Logs ===== */
+.webhook-card {
+ border: 1px solid #ddd;
+ border-radius: 6px;
+ padding: 14px;
+ margin-bottom: 16px;
+ background-color: #fafafa;
+}
+
+.webhook-meta {
+ margin-bottom: 10px;
+ color: #444;
+}
+
+.webhook-payload {
+ background-color: #1e1e1e;
+ color: #dcdcdc;
+ padding: 12px;
+ border-radius: 4px;
+ overflow-x: auto;
+ font-size: 13px;
+}
