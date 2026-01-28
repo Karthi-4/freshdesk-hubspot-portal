@@ -11,11 +11,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 export default function App() {
  return (
   <Routes>
-   <Route path="/login" element={<Login />} />
+   <Route path="/" element={<Login />} />
    <Route path="/signup" element={<Signup />} />
 
    {/* Root redirect */}
-   <Route path="/" element={<Navigate to="/dashboard" replace />} />
+   <Route path="/dashboard" element={<Navigate to="/dashboard" replace />} />
 
    {/* Protected routes */}
    <Route
