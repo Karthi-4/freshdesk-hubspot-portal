@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
- import.meta.env.VITE_API_BASE_URL,
+ baseURL: "https://freshdesk-hubspot-portal.onrender.com",
 });
 
 api.interceptors.request.use((config) => {
