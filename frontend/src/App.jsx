@@ -14,10 +14,18 @@ export default function App() {
    <Route path="/login" element={<Login />} />
    <Route path="/signup" element={<Signup />} />
 
-   {/* Root redirect */}
-   <Route path="/" element={<Navigate to="/dashboard" replace />} />
+   {/* Auth-aware root */}
+   <Route
+    path="/"
+    element={
+     localStorage.getItem("token") ? (
+      <Navigate to="/dashboard" replace />
+     ) : (
+      <Navigate to="/login" replace />
+     )
+    }
+   />
 
-   {/* Protected routes */}
    <Route
     path="/dashboard"
     element={
