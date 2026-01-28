@@ -2,15 +2,20 @@ import { Link } from "react-router-dom";
 
 export default function Dashboard() {
  return (
-  <div>
+  <div className="container">
    <h1>Dashboard</h1>
-   <nav>
+
+   <div className="card">
     <Link to="/connect">Connect Integrations</Link>
-    <br />
+   </div>
+
+   <div className="card">
     <Link to="/tickets">View Tickets</Link>
-    <br />
+   </div>
+
+   <div className="card">
     <Link to="/webhooks">Webhook Logs</Link>
-   </nav>
+   </div>
   </div>
  );
 }
