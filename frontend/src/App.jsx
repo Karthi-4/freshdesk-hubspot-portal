@@ -6,8 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Tickets from "./pages/Tickets";
 import TicketDetails from "./pages/TicketDetails";
 import Webhooks from "./pages/Webhooks";
-
-const isAuth = () => !!localStorage.getItem("token");
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
  return (
@@ -15,11 +14,54 @@ export default function App() {
    <Route path="/login" element={<Login />} />
    <Route path="/signup" element={<Signup />} />
 
-   <Route path="/" element={isAuth() ? <Dashboard /> : <Navigate to="/login" />} />
-   <Route path="/connect" element={<Connect />} />
-   <Route path="/tickets" element={<Tickets />} />
-   <Route path="/tickets/:id" element={<TicketDetails />} />
-   <Route path="/webhooks" element={<Webhooks />} />
+   {/* Root redirect */}
+   <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+   {/* Protected routes */}
+   <Route
+    path="/dashboard"
+    element={
+     <ProtectedRoute>
+      <Dashboard />
+     </ProtectedRoute>
+    }
+   />
+
+   <Route
+    path="/connect"
+    element={
+     <ProtectedRoute>
+      <Connect />
+     </ProtectedRoute>
+    }
+   />
+
+   <Route
+    path="/tickets"
+    element={
+     <ProtectedRoute>
+      <Tickets />
+     </ProtectedRoute>
+    }
+   />
+
+   <Route
+    path="/tickets/:id"
+    element={
+     <ProtectedRoute>
+      <TicketDetails />
+     </ProtectedRoute>
+    }
+   />
+
+   <Route
+    path="/webhooks"
+    element={
+     <ProtectedRoute>
+      <Webhooks />
+     </ProtectedRoute>
+    }
+   />
   </Routes>
  );
 }
